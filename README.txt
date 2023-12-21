@@ -11,9 +11,13 @@ Steps:
 3) In order to visualize the raw EEG data, run the following file: 1_LSL_read_raw_data.py
 
 4) In order to filter the raw data coming from 'AURA' LSL stream, run the follwing file: 2_LSL_filter_raw_data.py   
-This script will read the raw data, filtering and generate a new stream called: "AURAFilteredEEG"
+This script will read the raw data, filtering and generate a new stream called: "AURAFilteredEEG" and "AURAKalmanFilteredEEG"
 
-5) In order to compute the Bandpower of the filtered data run the following file: 
+5)For only 3 channel use run 4_LSL_3channel_Banpower" wich take only the first three electrodes and compute PSD to obtain EEG_Bandpower, this create a new stream called: "AURAPSD"
+
+6)In order two visualize "AURAFilteredEEG" and "AURAKalmanFilteredEEG" you can run "5_LSL_Graphic"
+
+7) In order to compute the Bandpower of the filtered data run the following file: 
 This file receives an LSL stream of eight EEG channels with filtered EEG data called "AURAFilteredEEG"
 The output is a 40 channel stream called 'EEG_BANDPOWER_X' contaning normalized bandpower values from input channels in the following form:
 
